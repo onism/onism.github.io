@@ -229,6 +229,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/Estimating-Model-Error-covariances-using-particle-filters/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/13/Estimating-Model-Error-covariances-using-particle-filters/" itemprop="url">Estimating Model Error covariances using particle filters</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T16:50:20+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017.</p>
+<p><strong>For high-dimensional systems the covariance is never calculated explicitly.</strong></p>
+<p>Several methods to estimate state covariance have been developed.</p>
+<blockquote>
+<p>Todling R. 2015a. A complementary note to lag-1 smoother approach to system-error estimation: The intrinsic limitations of residual diagnostics. Q. J. R. Meteorol. Soc. 141: 2917–2922. Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequential method. Q. J. R. Meteorol. Soc. 141: 1502–1513.</p>
+</blockquote>
+<p>Todling gives an alternative method to diagnoise model error, which requires two overlapping DA systems, one sequential filter and one fixed lag-l smoother.</p>
+<p>Three solutions have been presented in the literature:</p>
+<ol style="list-style-type: decimal">
+<li>localized particle filter ( A localized particle filter for high-dimensional nonlinear, A non-parametric ensemble transform method for Bayesian inference)</li>
+<li>explore the proposal density freedom ( Implicit equal-weights particle filter)</li>
+<li>combine particle filter with ensemble kalman filter</li>
+</ol>
+<p>A problem with localized particle filter is that use localization is that the localization radius has to be taken very small to avod this weight collapse.</p>
+<p>Furthermore, issues with localization as mentioned above for ensemble Kalman filters play a role here too.</p>
+<h2 id="estimating-the-model-error-covariance">Estimating the model error covariance</h2>
+<p>The model equations are denoted as <span class="math display">\[
+x^n
+\]</span></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/State-Dependent-Filter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -643,7 +781,7 @@ x^2    \beta
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
