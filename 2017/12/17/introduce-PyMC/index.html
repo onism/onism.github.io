@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="KalmanFilter," />
+  <meta name="keywords" content="Bayes," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="ref: https://arxiv.org/pdf/1711.09598.pdf The DMKF combines diffusion maps with a linear Kalman filter and with diffusion maps to construct data-driven virtual state corrdinates.  Introduction In this">
-<meta name="keywords" content="KalmanFilter">
+<meta name="description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
+<meta name="keywords" content="Bayes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DMKF">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/DMKF/index.html">
+<meta property="og:title" content="introduce PyMC">
+<meta property="og:url" content="http://yoursite.com/2017/12/17/introduce-PyMC/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="ref: https://arxiv.org/pdf/1711.09598.pdf The DMKF combines diffusion maps with a linear Kalman filter and with diffusion maps to construct data-driven virtual state corrdinates.  Introduction In this">
+<meta property="og:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-13T02:07:02.000Z">
+<meta property="og:updated_time" content="2017-12-17T12:28:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMKF">
-<meta name="twitter:description" content="ref: https://arxiv.org/pdf/1711.09598.pdf The DMKF combines diffusion maps with a linear Kalman filter and with diffusion maps to construct data-driven virtual state corrdinates.  Introduction In this">
+<meta name="twitter:title" content="introduce PyMC">
+<meta name="twitter:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/13/DMKF/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/17/introduce-PyMC/"/>
 
 
 
 
 
-  <title>DMKF | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>introduce PyMC | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/DMKF/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/introduce-PyMC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Junjie Wang">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DMKF</h1>
+          <h1 class="post-title" itemprop="name headline">introduce PyMC</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T09:53:49+08:00">
-                2017-12-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T19:47:43+08:00">
+                2017-12-17
               </time>
             
 
@@ -300,10 +300,30 @@
       
 
       
-        <p>ref: <a href="https://arxiv.org/pdf/1711.09598.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1711.09598.pdf</a></p>
-<p>The DMKF combines diffusion maps with a linear Kalman filter and with diffusion maps to construct data-driven virtual state corrdinates.</p>
-<h1 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h1>
-<p>In this paper, the authors take a non-parametric approach and propose a new method to derive the system model in a data-driven manner.</p>
+        <p><strong>父变量</strong> 是会对其他变量有影响的变量<br>
+<strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
+<p>之间关系是多对多点关系。</p>
+<p>以下面代码为例子：</p>
+<pre><code>import pymc as pm
+
+lambda_ = pm.Exponential('poisson_param',1)
+data_generator = pm.Poisson('data_generator', lambda_)
+data_plus_one = data_generator + 1
+print 'Children of lambda_'
+print lambda_.children
+print 'Parents of data_generator'
+print data_generator.parents
+print 'Children of data_generator'
+print data_generator.children
+</code></pre>
+<p>程序输出如下：</p>
+<pre><code>Children of lambda_
+set([&lt;pymc.distributions.Poisson 'data_generator' at 0x110677a50&gt;])
+Parents of data_generator
+{'mu': &lt;pymc.distributions.Exponential 'poisson_param' at 0x110677990&gt;}
+Children of data_generator
+set([&lt;pymc.PyMCObjects.Deterministic '(data_generator_add_1)' at 0x11068d450&gt;]
+</code></pre>
 
       
     </div>
@@ -321,7 +341,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/KalmanFilter/" rel="tag"># KalmanFilter</a>
+            <a href="/tags/Bayes/" rel="tag"># Bayes</a>
           
         </div>
       
@@ -334,8 +354,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/12/13/RBPF-for-ExtentedTarget/" rel="next" title="RBPF for ExtentedTarget">
+                <i class="fa fa-chevron-left"></i> RBPF for ExtentedTarget
               </a>
             
           </div>
@@ -344,8 +364,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/13/State-Dependent-Filter/" rel="prev" title="State-Dependent Filter">
-                State-Dependent Filter <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/18/LIMIS/" rel="prev" title="LIMIS">
+                LIMIS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -396,17 +416,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -459,22 +470,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
