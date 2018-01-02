@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
+<meta name="description" content="​	Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
 <meta name="keywords" content="particlefilter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Estimating Model Error covariances using particle filters">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/Estimating-Model-Error-covariances-using-particle-filters/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
+<meta property="og:description" content="​	Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-17T11:48:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Estimating Model Error covariances using particle filters">
-<meta name="twitter:description" content="​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
+<meta name="twitter:description" content="​	Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017. For high-dimensional systems the covarianc">
 
 
 
@@ -300,26 +300,29 @@
       
 
       
-        <p>​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017.</p>
+        <p>​	Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017.</p>
 <p><strong>For high-dimensional systems the covariance is never calculated explicitly.</strong></p>
 <p>Several methods to estimate state covariance have been developed.</p>
 <blockquote>
-<p>Todling R. 2015a. A complementary note to lag-1 smoother approach to system-error estimation: The intrinsic limitations of residual diagnostics. Q. J. R. Meteorol. Soc. 141: 2917–2922. Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequential method. Q. J. R. Meteorol. Soc. 141: 1502–1513.</p>
+<p>Todling R. 2015a. A complementary note to lag-1 smoother approach to system-error estimation: The intrinsic limitations of residual diagnostics. Q. J. R. Meteorol. Soc. 141: 2917–2922.<br>
+Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequential method. Q. J. R. Meteorol. Soc. 141: 1502–1513.</p>
 </blockquote>
 <p>Todling gives an alternative method to diagnoise model error, which requires two overlapping DA systems, one sequential filter and one fixed lag-l smoother.</p>
 <p>Three solutions have been presented in the literature:</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>localized particle filter ( A localized particle filter for high-dimensional nonlinear, A non-parametric ensemble transform method for Bayesian inference)</li>
 <li>explore the proposal density freedom ( Implicit equal-weights particle filter)</li>
 <li>combine particle filter with ensemble kalman filter</li>
 </ol>
 <p>A problem with localized particle filter is that use localization is that the localization radius has to be taken very small to avod this weight collapse.</p>
 <p>Furthermore, issues with localization as mentioned above for ensemble Kalman filters play a role here too.</p>
-<h2 id="estimating-the-model-error-covariance">Estimating the model error covariance</h2>
+<h2 id="estimating-the-model-error-covariance"><a class="markdownIt-Anchor" href="#estimating-the-model-error-covariance"></a> Estimating the model error covariance</h2>
 <p>The model equations are denoted as</p>
-<p><span class="math display">\[x^n = f(x^{n-1}) + \beta^n\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>f</mi><mo>(</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo><mo>+</mo><msup><mi>β</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x^n = f(x^{n-1}) + \beta^n
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.864108em;"></span><span class="strut bottom" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mord"><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
 <p>Then:</p>
-<p><span class="math display">\[y^n - H(f_i )= y^n - H()\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>y</mi><mi>n</mi></msup><mo>−</mo><mi>H</mi><mo>(</mo><msub><mi>f</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msup><mi>y</mi><mi>n</mi></msup><mo>−</mo><mi>H</mi><mo>(</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">y^n - H(f_i )= y^n - H()
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span></span></p>
 
       
     </div>
@@ -437,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -450,7 +453,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -485,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#estimating-the-model-error-covariance"><span class="nav-number">1.</span> <span class="nav-text">Estimating the model error covariance</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#estimating-the-model-error-covariance"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#estimating-the-model-error-covariance"></a> Estimating the model error covariance</span></a></li></ol></div>
             
 
           </div>
@@ -505,7 +508,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
