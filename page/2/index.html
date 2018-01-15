@@ -229,6 +229,269 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/introduce-PyMC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/17/introduce-PyMC/" itemprop="url">introduce PyMC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T19:47:43+08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>父变量</strong> 是会对其他变量有影响的变量 <strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
+<p>之间关系是多对多点关系。</p>
+<p>以下面代码为例子：</p>
+<pre><code>import pymc as pm
+
+lambda_ = pm.Exponential(&#39;poisson_param&#39;,1)
+data_generator = pm.Poisson(&#39;data_generator&#39;, lambda_)
+data_plus_one = data_generator + 1
+print &#39;Children of lambda_&#39;
+print lambda_.children
+print &#39;Parents of data_generator&#39;
+print data_generator.parents
+print &#39;Children of data_generator&#39;
+print data_generator.children</code></pre>
+<p>程序输出如下：</p>
+<pre><code>Children of lambda_
+set([&lt;pymc.distributions.Poisson &#39;data_generator&#39; at 0x110677a50&gt;])
+Parents of data_generator
+{&#39;mu&#39;: &lt;pymc.distributions.Exponential &#39;poisson_param&#39; at 0x110677990&gt;}
+Children of data_generator
+set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11068d450&gt;]</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/RBPF-for-ExtentedTarget/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/13/RBPF-for-ExtentedTarget/" itemprop="url">RBPF for ExtentedTarget</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T20:19:13+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model</p>
+<p>In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing random hypersurface based ETT models use EKF/UKF for inference, which may lead to poor performance under high uncertainty.</p>
+<pre><code>N. Wahlstrom and E. ¨ Ozkan, “Extended target tracking using Gaussian ¨processes,” IEEE Transactions on Signal Processing, vol. 63, no. 16,pp. 4165–4178, 2015.</code></pre>
+<p>An online Gaussian process regression problem is cast into a filtering problem by dereiving a dedciated state space model.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/Estimating-Model-Error-covariances-using-particle-filters/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -786,7 +1049,7 @@ x^2    \beta
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -799,7 +1062,7 @@ x^2    \beta
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
