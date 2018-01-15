@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ExtendedTarget ParticleFilter," />
+  <meta name="keywords" content="TransportFilter," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing rando">
-<meta name="keywords" content="ExtendedTarget ParticleFilter">
+<meta name="description" content="Variational inference via decomposable transports: algorithms for Bayesian filtering and smooting This paper describes a variational inference method that approximates an intractable target measure as">
+<meta name="keywords" content="TransportFilter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RBPF for ExtentedTarget">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/RBPF-for-ExtentedTarget/index.html">
+<meta property="og:title" content="TransportFilter">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/TransportFilter/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing rando">
+<meta property="og:description" content="Variational inference via decomposable transports: algorithms for Bayesian filtering and smooting This paper describes a variational inference method that approximates an intractable target measure as">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-13T12:23:50.000Z">
+<meta property="og:updated_time" content="2018-01-10T06:44:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RBPF for ExtentedTarget">
-<meta name="twitter:description" content="Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing rando">
+<meta name="twitter:title" content="TransportFilter">
+<meta name="twitter:description" content="Variational inference via decomposable transports: algorithms for Bayesian filtering and smooting This paper describes a variational inference method that approximates an intractable target measure as">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/13/RBPF-for-ExtentedTarget/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/10/TransportFilter/"/>
 
 
 
 
 
-  <title>RBPF for ExtentedTarget | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>TransportFilter | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/RBPF-for-ExtentedTarget/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/10/TransportFilter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Junjie Wang">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RBPF for ExtentedTarget</h1>
+          <h1 class="post-title" itemprop="name headline">TransportFilter</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T20:19:13+08:00">
-                2017-12-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T13:20:39+08:00">
+                2018-01-10
               </time>
             
 
@@ -300,10 +300,16 @@
       
 
       
-        <p>Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model</p>
-<p>In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing random hypersurface based ETT models use EKF/UKF for inference, which may lead to poor performance under high uncertainty.</p>
-<pre><code>N. Wahlstrom and E. ¨ Ozkan, “Extended target tracking using Gaussian ¨processes,” IEEE Transactions on Signal Processing, vol. 63, no. 16,pp. 4165–4178, 2015.</code></pre>
-<p>An online Gaussian process regression problem is cast into a filtering problem by dereiving a dedciated state space model.</p>
+        <h1 id="variational-inference-via-decomposable-transports-algorithms-for-bayesian-filtering-and-smooting">Variational inference via decomposable transports: algorithms for Bayesian filtering and smooting</h1>
+<p>This paper describes a variational inference method that approximates an intractable target measure as the pushforward of a tractable distribution through a transport map. The authors show how such transport maps can be decomposed--i.e., factorized into the composition of finitely many low-dimensional maps.</p>
+<h2 id="measure-transport-and-variational-inference">Measure transport and variational inference</h2>
+<p>The coupling ensures that <span class="math inline">\(T(X) = Z\)</span> in distribution, or equivalently, that <span class="math inline">\(T\)</span> pushes forward <span class="math inline">\(\eta\)</span> to <span class="math inline">\(\pi\)</span>, i.e., <span class="math inline">\(T_{\sharp}\eta = \pi\)</span>, where <span class="math inline">\(T_{\sharp}\eta\)</span> denotes the pushforward density of <span class="math inline">\(\eta\)</span> by <span class="math inline">\(T\)</span>. Thus if <span class="math inline">\(X_1,...,X_n\)</span> is an independent and identically distributed sample from <span class="math inline">\(\eta\)</span>, then <span class="math inline">\(T(X_1),...,T(X_n)\)</span> is an iid sample from <span class="math inline">\(\pi\)</span>. In other words, <span class="math inline">\(T\)</span> enables the generation of cheap, independent, and unweighted samples from <span class="math inline">\(\pi\)</span> by pushing forward a collection of reference samples through the map.</p>
+<p>A transport map between random variables on <span class="math inline">\(\mathbb{R}^n\)</span> exists under very weak conditions. There are infinitely many transports that push forward one density to another. An important transport for our analysis is the KR rearrangement. For a pair of continuous densities, <span class="math inline">\(\eta\)</span> and <span class="math inline">\(\pi\)</span>, the KR rearrangement is the unique monotone increasing triangular transport that push forward <span class="math inline">\(\eta\)</span> to <span class="math inline">\(\pi\)</span>.</p>
+<h2 id="decomposable-transports">Decomposable transports</h2>
+<p>The key observation of this work is that a transport map is not just any multivariate function.</p>
+<p>By considering recursive graph decompositions of a Markov network for <span class="math inline">\(\pi\)</span>, it is possible to prove the existence of transports <span class="math inline">\(T\)</span> that factorize exactly as the composition of <span class="math inline">\(k\)</span> low-dimensional maps, <span class="math inline">\(T = T_1 \circ...\circ T_k\)</span>, for some finite <span class="math inline">\(k\)</span>, where each map <span class="math inline">\(T_j\)</span> differs from the identity function only few components and is traingular up to a permutation of the input and output space. We call such transports <strong>decomposable.</strong></p>
+<h2 id="online-algorithms-for-bayesian-filtering-and-smoothing">Online algorithms for Bayesian filtering and smoothing</h2>
+<p>The key result of this section is a new deterministic and recursive algorithm for online inference with transport maps, which, in a single forward pass, computes a sequenc of trangular maps of fixed dimension (<span class="math inline">\(2n + p\)</span>) that, properly composed, are capable of sampling for all <span class="math inline">\(k &gt; 0\)</span>.</p>
 
       
     </div>
@@ -321,7 +327,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ExtendedTarget-ParticleFilter/" rel="tag"># ExtendedTarget ParticleFilter</a>
+            <a href="/tags/TransportFilter/" rel="tag"># TransportFilter</a>
           
         </div>
       
@@ -334,8 +340,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/Estimating-Model-Error-covariances-using-particle-filters/" rel="next" title="Estimating Model Error covariances using particle filters">
-                <i class="fa fa-chevron-left"></i> Estimating Model Error covariances using particle filters
+              <a href="/2018/01/07/CSMC/" rel="next" title="CSMC">
+                <i class="fa fa-chevron-left"></i> CSMC
               </a>
             
           </div>
@@ -343,10 +349,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/17/introduce-PyMC/" rel="prev" title="introduce PyMC">
-                introduce PyMC <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -396,8 +398,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -450,6 +461,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#variational-inference-via-decomposable-transports-algorithms-for-bayesian-filtering-and-smooting"><span class="nav-number">1.</span> <span class="nav-text">Variational inference via decomposable transports: algorithms for Bayesian filtering and smooting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-transport-and-variational-inference"><span class="nav-number">1.1.</span> <span class="nav-text">Measure transport and variational inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#decomposable-transports"><span class="nav-number">1.2.</span> <span class="nav-text">Decomposable transports</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#online-algorithms-for-bayesian-filtering-and-smoothing"><span class="nav-number">1.3.</span> <span class="nav-text">Online algorithms for Bayesian filtering and smoothing</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -577,7 +604,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -623,6 +650,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 

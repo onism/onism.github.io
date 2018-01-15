@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributi">
+<meta name="description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributio">
 <meta name="keywords" content="Kalman Distributed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AKCF">
 <meta property="og:url" content="http://yoursite.com/2018/01/01/AKCF/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributi">
+<meta property="og:description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributio">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-02T01:10:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AKCF">
-<meta name="twitter:description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributi">
+<meta name="twitter:description" content="Distributed Agent-based Dynamic State Estimation over a Lossy Network Dynamic state estimation in a large CPS presents some unique challenges. A typical example is the smart electric power distributio">
 
 
 
@@ -300,24 +300,23 @@
       
 
       
-        <h1 id="distributed-agent-based-dynamic-state-estimation-over-a-lossy-network"><a class="markdownIt-Anchor" href="#distributed-agent-based-dynamic-state-estimation-over-a-lossy-network"></a> Distributed Agent-based Dynamic State Estimation over a Lossy Network</h1>
-<p>Dynamic state estimation in a large CPS presents some unique challenges. <strong>A typical example is the smart electric power distribution system with thousands of end-uses. For such a system, the dimension of corresponding state vector is quite large presenting high computational as well as communication burden for the sensors</strong>. In conventional distributed Kalman filter setup, each sensor has to regularly store and update the global state vector and estimation error covariance matrix. Thus, it may be  impractical to track the high dimensional state vector in its entirety at each communicable sensor.</p>
+        <h1 id="distributed-agent-based-dynamic-state-estimation-over-a-lossy-network">Distributed Agent-based Dynamic State Estimation over a Lossy Network</h1>
+<p>Dynamic state estimation in a large CPS presents some unique challenges. <strong>A typical example is the smart electric power distribution system with thousands of end-uses. For such a system, the dimension of corresponding state vector is quite large presenting high computational as well as communication burden for the sensors</strong>. In conventional distributed Kalman filter setup, each sensor has to regularly store and update the global state vector and estimation error covariance matrix. Thus, it may be impractical to track the high dimensional state vector in its entirety at each communicable sensor.</p>
 <pre><code>Mohammadi, A., Asif, A.: Distributed state estimation for large-scale nonlinear
 systems: A reduced order particle filter implementation. In: Statistical Signal Processing
 Workshop (SSP), 2012 IEEE. pp. 249–252 (Aug 2012)
 
 Dorfler, F., Pasqualetti, F., Bullo, F.: Continuous-time distributed observers with
 discrete communication. Selected Topics in Signal Processing, IEEE Journal of
-7(2), 296–304 (April 2013)
-</code></pre>
+7(2), 296–304 (April 2013)</code></pre>
 <p>Some state elements may even be coupled to its local observation space. Under these circumstances, each sensor may be relieved to track only the pertinent state elements, thus reducing thes ize of error covariance matrices and subsequent reduction in computational requirements.</p>
 <p>In this paper, an agent-based formulation of KCF and DKF is proposed. Each agent has access to a distinct set of measurements, that are coupled to a subset of global state elements.</p>
-<p>Unlike conventional distributed Kalman filtering, a particular agent <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> attempts to estimate only the local state vector <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{k,k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> instead of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</p>
-<p>The agent-based dynamic state estimation procedure is developed with minimum mean squre error (MSE) as the metric of interest. The state vector estimated by the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>k</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">k^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.849108em;"></span><span class="strut bottom" style="height:0.849108em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit">h</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> agent at discrete time instant <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> is defined as</p>
+<p>Unlike conventional distributed Kalman filtering, a particular agent <span class="math inline">\(k\)</span> attempts to estimate only the local state vector <span class="math inline">\(x_{k,k}\)</span> instead of <span class="math inline">\(x_t\)</span>.</p>
+<p>The agent-based dynamic state estimation procedure is developed with minimum mean squre error (MSE) as the metric of interest. The state vector estimated by the <span class="math inline">\(k^{th}\)</span> agent at discrete time instant <span class="math inline">\(i\)</span> is defined as</p>
 <p>The first five steps of estimation are performed according to traditional Kalman filtering.</p>
 <p>The conventional distributed Kalman filtering mathematically interpret the uniform diffusion when there is no loss or failure in the communication network.</p>
-<h2 id="effect-of-communication"><a class="markdownIt-Anchor" href="#effect-of-communication"></a> Effect of Communication</h2>
-<p>Mathematically, effect of RLF can be analyzed by inserting Bernoulli random variables <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>k</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\gamma_{i,k}(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.05556em;">γ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05556em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">t</span><span class="mclose">)</span></span></span></span> in equations.  These random variables have the following probability mass functions.</p>
+<h2 id="effect-of-communication">Effect of Communication</h2>
+<p>Mathematically, effect of RLF can be analyzed by inserting Bernoulli random variables <span class="math inline">\(\gamma_{i,k}(t)\)</span> in equations. These random variables have the following probability mass functions.</p>
 
       
     </div>
@@ -435,7 +434,7 @@ discrete communication. Selected Topics in Signal Processing, IEEE Journal of
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -448,7 +447,7 @@ discrete communication. Selected Topics in Signal Processing, IEEE Journal of
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -483,7 +482,7 @@ discrete communication. Selected Topics in Signal Processing, IEEE Journal of
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#distributed-agent-based-dynamic-state-estimation-over-a-lossy-network"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#distributed-agent-based-dynamic-state-estimation-over-a-lossy-network"></a> Distributed Agent-based Dynamic State Estimation over a Lossy Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-of-communication"><span class="nav-number">1.1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#effect-of-communication"></a> Effect of Communication</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#distributed-agent-based-dynamic-state-estimation-over-a-lossy-network"><span class="nav-number">1.</span> <span class="nav-text">Distributed Agent-based Dynamic State Estimation over a Lossy Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-of-communication"><span class="nav-number">1.1.</span> <span class="nav-text">Effect of Communication</span></a></li></ol></li></ol></div>
             
 
           </div>
