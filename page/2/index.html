@@ -229,6 +229,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/27/LRKFs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/27/LRKFs/" itemprop="url">LRKFs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T10:59:20+08:00">
+                2017-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linear-regression-kalman-filtering-based-on-hyperspherical-deterministic-sampling">Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling</h1>
+<p>http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf</p>
+<p>This paper proposed a novel sampling scheme that is based on decomposing the problem of sampling a multivariate Gaussian into sampling a Chi distribution and sampling uniformly on the surface of a hypersphere. The proposed sampling scheme has significant advantages compared to existing methods because it produces a user-selectable number of samples with uniform, nonnegative weights and it does not require any numerical optimization.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The downside of CKF is that the number of samples is fixed by the dimension and the cubature rule.</p>
+<pre><code>O. Straka, J. Dunik, and M. Simandl, “Randomized Unscented Kalman
+Filter in Target Tracking,” in 15th International Conference on
+Information Fusion (Fusion 2012), 2012, pp. 503–510.</code></pre>
+<p>Randomized UKF takes multiple UKF sample sets and performs a random rotation as well as a random scaling on each.</p>
+<p>It may be desirable to maintain higher moments of the Gaussian distribution, because Gaussian quadrature rules guarantee optimality of certain moments for polynomial systems up to a predetermined degree. It is also benefical if the number of samples can be adjusted to perform a trade-off between computationl effort and accuracy.</p>
+<p>Moreover, we would like the sample set to be deterministic, so results are easily reproducible and the accuracy of the estimate does not depend on the choice of random numbers.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/LIMIS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1183,7 +1313,7 @@ x^2    \beta
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1196,7 +1326,7 @@ x^2    \beta
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
