@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Bayes," />
+  <meta name="keywords" content="ParticleFilter," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
-<meta name="keywords" content="Bayes">
+<meta name="description" content="Improving the particle filter for high-dimensional problems using artificial process noise In this paper, the authors approximate the model by adding artificial process noise in an additional state up">
+<meta name="keywords" content="ParticleFilter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="introduce PyMC">
-<meta property="og:url" content="http://yoursite.com/2017/12/17/introduce-PyMC/index.html">
+<meta property="og:title" content="PF artificial">
+<meta property="og:url" content="http://yoursite.com/2018/01/24/PF-artificial/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
+<meta property="og:description" content="Improving the particle filter for high-dimensional problems using artificial process noise In this paper, the authors approximate the model by adding artificial process noise in an additional state up">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-17T12:28:19.000Z">
+<meta property="og:updated_time" content="2018-01-24T02:54:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="introduce PyMC">
-<meta name="twitter:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
+<meta name="twitter:title" content="PF artificial">
+<meta name="twitter:description" content="Improving the particle filter for high-dimensional problems using artificial process noise In this paper, the authors approximate the model by adding artificial process noise in an additional state up">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/17/introduce-PyMC/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/24/PF-artificial/"/>
 
 
 
 
 
-  <title>introduce PyMC | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>PF artificial | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/17/introduce-PyMC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/24/PF-artificial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Junjie Wang">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">introduce PyMC</h1>
+          <h1 class="post-title" itemprop="name headline">PF artificial</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T19:47:43+08:00">
-                2017-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-24T10:16:58+08:00">
+                2018-01-24
               </time>
             
 
@@ -300,27 +300,10 @@
       
 
       
-        <p><strong>父变量</strong> 是会对其他变量有影响的变量 <strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
-<p>之间关系是多对多点关系。</p>
-<p>以下面代码为例子：</p>
-<pre><code>import pymc as pm
-
-lambda_ = pm.Exponential(&#39;poisson_param&#39;,1)
-data_generator = pm.Poisson(&#39;data_generator&#39;, lambda_)
-data_plus_one = data_generator + 1
-print &#39;Children of lambda_&#39;
-print lambda_.children
-print &#39;Parents of data_generator&#39;
-print data_generator.parents
-print &#39;Children of data_generator&#39;
-print data_generator.children</code></pre>
-<p>程序输出如下：</p>
-<pre><code>Children of lambda_
-set([&lt;pymc.distributions.Poisson &#39;data_generator&#39; at 0x110677a50&gt;])
-Parents of data_generator
-{&#39;mu&#39;: &lt;pymc.distributions.Exponential &#39;poisson_param&#39; at 0x110677990&gt;}
-Children of data_generator
-set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11068d450&gt;]</code></pre>
+        <h1 id="improving-the-particle-filter-for-high-dimensional-problems-using-artificial-process-noise">Improving the particle filter for high-dimensional problems using artificial process noise</h1>
+<p>In this paper, the authors approximate the model by adding artificial process noise in an additional state update, then they design a proposal that combines the standard and the locally optimal proposal.</p>
+<p>The approximate model is given by</p>
+<p><span class="math display">\[x^{&#39;}_t = f(x_{t-1},v_t)\]</span> <span class="math display">\[x_t =x^{&#39;}_t + \varepsilon \xi \]</span> <span class="math display">\[y_t = Cx_t + e_t\]</span></p>
 
       
     </div>
@@ -338,7 +321,7 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
       
         <div class="post-tags">
           
-            <a href="/tags/Bayes/" rel="tag"># Bayes</a>
+            <a href="/tags/ParticleFilter/" rel="tag"># ParticleFilter</a>
           
         </div>
       
@@ -351,8 +334,8 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/RBPF-for-ExtentedTarget/" rel="next" title="RBPF for ExtentedTarget">
-                <i class="fa fa-chevron-left"></i> RBPF for ExtentedTarget
+              <a href="/2018/01/21/A-Stable-Particle-Filter-in-High-Dimensions/" rel="next" title="A Stable Particle Filter in High-Dimensions">
+                <i class="fa fa-chevron-left"></i> A Stable Particle Filter in High-Dimensions
               </a>
             
           </div>
@@ -360,10 +343,6 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/18/LIMIS/" rel="prev" title="LIMIS">
-                LIMIS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -413,8 +392,17 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -467,6 +455,22 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#improving-the-particle-filter-for-high-dimensional-problems-using-artificial-process-noise"><span class="nav-number">1.</span> <span class="nav-text">Improving the particle filter for high-dimensional problems using artificial process noise</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -594,7 +598,7 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -640,6 +644,26 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
