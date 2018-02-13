@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Bayes," />
+  <meta name="keywords" content="KalmanFilter NN," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Fixed-Form Variational Posterior Approximation through Stochastic Linear Regression This paper proposed a general algorithm for approximating nonstandard Bayesian posterior distributions. The algorith">
-<meta name="keywords" content="Bayes">
+<meta name="description" content="Artificial neural network training utilizing the smooth variable structure filter estimation strategy A sequential learning algorithm based on adaptive particle filtering for RBF network Neural Comput">
+<meta name="keywords" content="KalmanFilter NN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LinRegVB">
-<meta property="og:url" content="http://yoursite.com/2018/01/02/LinRegVB/index.html">
+<meta property="og:title" content="KalmanNN">
+<meta property="og:url" content="http://yoursite.com/2018/01/25/KalmanNN/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="Fixed-Form Variational Posterior Approximation through Stochastic Linear Regression This paper proposed a general algorithm for approximating nonstandard Bayesian posterior distributions. The algorith">
+<meta property="og:description" content="Artificial neural network training utilizing the smooth variable structure filter estimation strategy A sequential learning algorithm based on adaptive particle filtering for RBF network Neural Comput">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T08:58:30.000Z">
+<meta property="og:updated_time" content="2018-01-25T08:34:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LinRegVB">
-<meta name="twitter:description" content="Fixed-Form Variational Posterior Approximation through Stochastic Linear Regression This paper proposed a general algorithm for approximating nonstandard Bayesian posterior distributions. The algorith">
+<meta name="twitter:title" content="KalmanNN">
+<meta name="twitter:description" content="Artificial neural network training utilizing the smooth variable structure filter estimation strategy A sequential learning algorithm based on adaptive particle filtering for RBF network Neural Comput">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/02/LinRegVB/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/25/KalmanNN/"/>
 
 
 
 
 
-  <title>LinRegVB | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>KalmanNN | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/LinRegVB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/KalmanNN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Junjie Wang">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LinRegVB</h1>
+          <h1 class="post-title" itemprop="name headline">KalmanNN</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-02T15:34:45+08:00">
-                2018-01-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T16:30:36+08:00">
+                2018-01-25
               </time>
             
 
@@ -300,27 +300,9 @@
       
 
       
-        <h1 id="fixed-form-variational-posterior-approximation-through-stochastic-linear-regression">Fixed-Form Variational Posterior Approximation through Stochastic Linear Regression</h1>
-<p>This paper proposed a general algorithm for approximating nonstandard Bayesian posterior distributions. <strong>The algorithm minimizes the KLD of an approximating distribution to the intractable posterior distribution.</strong></p>
-<p>In bayesian analysis the form of the posterior distribution is often not analytically tractable. To obtain quantities of interest under such a distribution, such as moments or marginal distributions, we typically need to use MC methods or approximate the posterior with a more convenient distribution.</p>
-<h2 id="fixed-form-vb">Fixed-form VB</h2>
-<p>A different approach is to restrict the optimization problem to a reduced set of more convenient distributions <span class="math inline">\(Q\)</span>. If <span class="math inline">\(p(x,y)\)</span> is of conjugate exponential form, choosing <span class="math inline">\(Q\)</span> to be the set of factorized distributions <span class="math inline">\(q(x) = q(x_1)q(x_2)...q(x_k)\)</span> often leads to a tractable optimization problem that can be solved efficiently using an algorithm called Variational Bayes Expectation Maximization (VBEM).</p>
-<p>An alternative choice for <span class="math inline">\(Q\)</span> is the set of distributions of a certain parametric form <span class="math inline">\(q_{\eta}(x)\)</span>, where <span class="math inline">\(\eta\)</span> denotes the vector of parameters governing the shape of the posterior approximation. This approach is known as structured or fixed-form VB.</p>
-<p>Usually, the posterior appeoximation is chosen to be a specific member of the exponential family of distributions:</p>
-<p><span class="math display">\[q_{\eta}(x) = exp[T(x)\eta - U(\eta)] v(x)\]</span>.</p>
-<p>Using this approach, the variational optimization problem reduces to a parametric optimization problem in <span class="math inline">\(\eta\)</span>:</p>
-<p><span class="math display">\[\hat{\eta} = \arg \min E_{q_{\eta}(x)}[log q_{\eta}(x) - log p(x,y)]\]</span></p>
-<h2 id="vb-as-linear-regression">VB as linear regression</h2>
-<p>For notational convenience we will write our posterior approximation in the adjusted form,</p>
-<p><span class="math display">\[\hat{q}_{\hat{\eta}}(x) = exp[\hat{T}(x)\hat{\eta}]\]</span></p>
-<p>To work with <span class="math inline">\(\hat{q}_{\hat{\eta}}(x)\)</span>, we use the unormalized version of the KLD.</p>
-<p><span class="math display">\[\hat{\eta} = E_q [\hat{T}(x)^{&#39;}\hat{T}(x)]^{-1} E_q [\hat{T}(x)^{&#39;} log p(x,y)]\]</span></p>
-<p><strong>Our key insight is to notice the similarity between (9) and the maximum likelihood estimator for linear regression.</strong></p>
-<p><span class="math display">\[ \hat{\beta} (X^{&#39;}X)^{-1} X^{&#39;}Y\]</span></p>
-<h2 id="a-stochastic-approximation-algorithm">A stochastic approximation algorithm</h2>
-<p><strong>The link between VB and linear regression in itself is interesting, but it does not yet provide us with a solution to the bariational optimization problem.</strong> We propose solving this optimization problem by viewing (9) as a fixed point update. Let <span class="math inline">\(C = E_q[\hat{T}(x)^{&#39;}\hat{T}(x)]\)</span> and <span class="math inline">\(g = E_q[\hat{T}(x)^{&#39;} log p(x,y)]\)</span> so that (9) can be written <span class="math inline">\(\hat{\eta} = C^{-1}g\)</span>. We iteratively approximate <span class="math inline">\(C,g\)</span> by weighted MC, drawing a single sample from the current posterior approximation at each iteration <span class="math inline">\(t\)</span>, and using the update equations</p>
-<p><span class="math display">\[ g_{t+1} = (1 - w) g_t + w \hat{g}_t\]</span></p>
-<p><span class="math display">\[C_{t+1} = (1 - w) C_t + w \hat{C}_t\]</span></p>
+        <h1 id="artificial-neural-network-training-utilizing-the-smooth-variable-structure-filter-estimation-strategy">Artificial neural network training utilizing the smooth variable structure filter estimation strategy</h1>
+<h1 id="a-sequential-learning-algorithm-based-on-adaptive-particle-filtering-for-rbf-network">A sequential learning algorithm based on adaptive particle filtering for RBF network</h1>
+<p>Neural Comput &amp; Applic</p>
 
       
     </div>
@@ -338,7 +320,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Bayes/" rel="tag"># Bayes</a>
+            <a href="/tags/KalmanFilter-NN/" rel="tag"># KalmanFilter NN</a>
           
         </div>
       
@@ -351,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/02/DIF/" rel="next" title="DIF">
-                <i class="fa fa-chevron-left"></i> DIF
+              <a href="/2018/01/24/PF-artificial/" rel="next" title="PF artificial">
+                <i class="fa fa-chevron-left"></i> PF artificial
               </a>
             
           </div>
@@ -361,8 +343,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/06/PLRNN/" rel="prev" title="PLRNN">
-                PLRNN <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/13/LocalizedPF/" rel="prev" title="LocalizedPF">
+                LocalizedPF <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,7 +468,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#fixed-form-variational-posterior-approximation-through-stochastic-linear-regression"><span class="nav-number">1.</span> <span class="nav-text">Fixed-Form Variational Posterior Approximation through Stochastic Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fixed-form-vb"><span class="nav-number">1.1.</span> <span class="nav-text">Fixed-form VB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vb-as-linear-regression"><span class="nav-number">1.2.</span> <span class="nav-text">VB as linear regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-stochastic-approximation-algorithm"><span class="nav-number">1.3.</span> <span class="nav-text">A stochastic approximation algorithm</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#artificial-neural-network-training-utilizing-the-smooth-variable-structure-filter-estimation-strategy"><span class="nav-number">1.</span> <span class="nav-text">Artificial neural network training utilizing the smooth variable structure filter estimation strategy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-sequential-learning-algorithm-based-on-adaptive-particle-filtering-for-rbf-network"><span class="nav-number">2.</span> <span class="nav-text">A sequential learning algorithm based on adaptive particle filtering for RBF network</span></a></li></ol></div>
             
 
           </div>
