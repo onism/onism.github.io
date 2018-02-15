@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf This paper proposed a novel sampling scheme that is based on dec">
+<meta name="description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 <meta name="keywords" content="KalmanFilter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LRKFs">
-<meta property="og:url" content="http://yoursite.com/2017/12/27/LRKFs/index.html">
+<meta property="og:title" content="HEKF">
+<meta property="og:url" content="http://yoursite.com/2018/02/15/HEKF/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf This paper proposed a novel sampling scheme that is based on dec">
+<meta property="og:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T02:21:46.000Z">
+<meta property="og:updated_time" content="2018-02-15T02:19:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LRKFs">
-<meta name="twitter:description" content="Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf This paper proposed a novel sampling scheme that is based on dec">
+<meta name="twitter:title" content="HEKF">
+<meta name="twitter:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/27/LRKFs/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/15/HEKF/"/>
 
 
 
 
 
-  <title>LRKFs | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>HEKF | My Blogs</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/27/LRKFs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/15/HEKF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Junjie Wang">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LRKFs</h1>
+          <h1 class="post-title" itemprop="name headline">HEKF</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T10:59:20+08:00">
-                2017-12-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T09:40:06+08:00">
+                2018-02-15
               </time>
             
 
@@ -300,18 +300,16 @@
       
 
       
-        <h1 id="linear-regression-kalman-filtering-based-on-hyperspherical-deterministic-sampling"><a class="markdownIt-Anchor" href="#linear-regression-kalman-filtering-based-on-hyperspherical-deterministic-sampling"></a> Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling</h1>
-<p><a href="http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf" target="_blank" rel="noopener">http://isas.uka.de/Publikationen/CDC17_Kurz-HSKF.pdf</a></p>
-<p>This paper proposed a novel sampling scheme that is based on decomposing the problem of sampling a multivariate Gaussian into sampling a Chi distribution and sampling uniformly on the surface of a hypersphere. The proposed sampling scheme has significant advantages compared to existing methods because it produces a user-selectable number of samples with uniform, nonnegative weights and it does not require any numerical optimization.</p>
-<h2 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h2>
-<p>The downside of CKF is that the number of samples is fixed by the dimension and the cubature rule.</p>
-<pre><code>O. Straka, J. Dunik, and M. Simandl, “Randomized Unscented Kalman
-Filter in Target Tracking,” in 15th International Conference on
-Information Fusion (Fusion 2012), 2012, pp. 503–510.
-</code></pre>
-<p>Randomized UKF takes multiple UKF sample sets and performs a random rotation as well as a random scaling on each.</p>
-<p>It may be desirable to maintain higher moments of the Gaussian distribution, because Gaussian quadrature rules guarantee optimality of certain moments for polynomial systems up to a predetermined degree. It is also benefical if the number of samples can be adjusted to perform a trade-off between computationl effort and accuracy.</p>
-<p>Moreover, we would like the sample set to be deterministic, so results are easily reproducible and the accuracy of the estimate does not depend on the choice of random numbers.</p>
+        <h1 id="a-hierarchical-bayes-ensemble-kalman-filter"><a class="markdownIt-Anchor" href="#a-hierarchical-bayes-ensemble-kalman-filter"></a> A Hierarchical Bayes Ensemble Kalman Filter</h1>
+<p>In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span>, which is estimated from the forecast ensemble.</p>
+<p>We hypothesize that</p>
+<ol>
+<li>The ensemble size is too small for sample covariance matrices to be accurate estimators</li>
+<li>The direct computation of the predictability covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">P_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><msub><mi>A</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><msubsup><mi>F</mi><mi>k</mi><mi>T</mi></msubsup></mrow><annotation encoding="application/x-tex">F_kA_{k-1}F_k^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8413309999999999em;"></span><span class="strut bottom" style="height:1.1244389999999997em;vertical-align:-0.2831079999999999em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">A</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.2831079999999999em;margin-left:-0.13889em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is unfeasible.</li>
+<li>The model error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is temporally variable and explicitly unknown</li>
+<li>Conditionally on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, the model errors are zero-mean Gaussian</li>
+<li>We can draw independent pseudo-random samples from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">N</mi></mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><msub><mi>Q</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,Q_k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal" style="margin-right:0.14736em;">N</span></span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span> with the true <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</li>
+</ol>
 
       
     </div>
@@ -342,8 +340,8 @@ Information Fusion (Fusion 2012), 2012, pp. 503–510.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/18/LIMIS/" rel="next" title="LIMIS">
-                <i class="fa fa-chevron-left"></i> LIMIS
+              <a href="/2018/02/13/LocalizedPF/" rel="next" title="LocalizedPF">
+                <i class="fa fa-chevron-left"></i> LocalizedPF
               </a>
             
           </div>
@@ -351,10 +349,6 @@ Information Fusion (Fusion 2012), 2012, pp. 503–510.
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/01/AKCF/" rel="prev" title="AKCF">
-                AKCF <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,7 +471,7 @@ Information Fusion (Fusion 2012), 2012, pp. 503–510.
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linear-regression-kalman-filtering-based-on-hyperspherical-deterministic-sampling"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#linear-regression-kalman-filtering-based-on-hyperspherical-deterministic-sampling"></a> Linear Regression Kalman Filtering Based on Hyperspherical Deterministic Sampling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-hierarchical-bayes-ensemble-kalman-filter"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#a-hierarchical-bayes-ensemble-kalman-filter"></a> A Hierarchical Bayes Ensemble Kalman Filter</span></a></li></ol></div>
             
 
           </div>
