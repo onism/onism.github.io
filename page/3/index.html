@@ -300,30 +300,27 @@
       
         
           
-            <p><strong>父变量</strong> 是会对其他变量有影响的变量<br>
-<strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
+            <p><strong>父变量</strong> 是会对其他变量有影响的变量 <strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
 <p>之间关系是多对多点关系。</p>
 <p>以下面代码为例子：</p>
 <pre><code>import pymc as pm
 
-lambda_ = pm.Exponential('poisson_param',1)
-data_generator = pm.Poisson('data_generator', lambda_)
+lambda_ = pm.Exponential(&#39;poisson_param&#39;,1)
+data_generator = pm.Poisson(&#39;data_generator&#39;, lambda_)
 data_plus_one = data_generator + 1
-print 'Children of lambda_'
+print &#39;Children of lambda_&#39;
 print lambda_.children
-print 'Parents of data_generator'
+print &#39;Parents of data_generator&#39;
 print data_generator.parents
-print 'Children of data_generator'
-print data_generator.children
-</code></pre>
+print &#39;Children of data_generator&#39;
+print data_generator.children</code></pre>
 <p>程序输出如下：</p>
 <pre><code>Children of lambda_
-set([&lt;pymc.distributions.Poisson 'data_generator' at 0x110677a50&gt;])
+set([&lt;pymc.distributions.Poisson &#39;data_generator&#39; at 0x110677a50&gt;])
 Parents of data_generator
-{'mu': &lt;pymc.distributions.Exponential 'poisson_param' at 0x110677990&gt;}
+{&#39;mu&#39;: &lt;pymc.distributions.Exponential &#39;poisson_param&#39; at 0x110677990&gt;}
 Children of data_generator
-set([&lt;pymc.PyMCObjects.Deterministic '(data_generator_add_1)' at 0x11068d450&gt;]
-</code></pre>
+set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11068d450&gt;]</code></pre>
 
           
         
@@ -445,8 +442,7 @@ set([&lt;pymc.PyMCObjects.Deterministic '(data_generator_add_1)' at 0x11068d450&
           
             <p>Ref: Rao-Blackwellised Particle Filter for Star-Convex Extended Target Tracking Model</p>
 <p>In this paper, the potential gains in using SMC methods for ETT models based on GP is explored. The existing random hypersurface based ETT models use EKF/UKF for inference, which may lead to poor performance under high uncertainty.</p>
-<pre><code>N. Wahlstrom and E. ¨ Ozkan, “Extended target tracking using Gaussian ¨processes,” IEEE Transactions on Signal Processing, vol. 63, no. 16,pp. 4165–4178, 2015.
-</code></pre>
+<pre><code>N. Wahlstrom and E. ¨ Ozkan, “Extended target tracking using Gaussian ¨processes,” IEEE Transactions on Signal Processing, vol. 63, no. 16,pp. 4165–4178, 2015.</code></pre>
 <p>An online Gaussian process regression problem is cast into a filtering problem by dereiving a dedciated state space model.</p>
 
           
@@ -567,29 +563,26 @@ set([&lt;pymc.PyMCObjects.Deterministic '(data_generator_add_1)' at 0x11068d450&
       
         
           
-            <p>​	Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017.</p>
+            <p>​ Zhu M, Van Leeuwen P J, Zhang W. Estimating Model Error Covariances Using Particle Filters[J]. Quarterly Journal of the Royal Meteorological Society, 2017.</p>
 <p><strong>For high-dimensional systems the covariance is never calculated explicitly.</strong></p>
 <p>Several methods to estimate state covariance have been developed.</p>
 <blockquote>
-<p>Todling R. 2015a. A complementary note to lag-1 smoother approach to system-error estimation: The intrinsic limitations of residual diagnostics. Q. J. R. Meteorol. Soc. 141: 2917–2922.<br>
-Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequential method. Q. J. R. Meteorol. Soc. 141: 1502–1513.</p>
+<p>Todling R. 2015a. A complementary note to lag-1 smoother approach to system-error estimation: The intrinsic limitations of residual diagnostics. Q. J. R. Meteorol. Soc. 141: 2917–2922. Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequential method. Q. J. R. Meteorol. Soc. 141: 1502–1513.</p>
 </blockquote>
 <p>Todling gives an alternative method to diagnoise model error, which requires two overlapping DA systems, one sequential filter and one fixed lag-l smoother.</p>
 <p>Three solutions have been presented in the literature:</p>
-<ol>
+<ol type="1">
 <li>localized particle filter ( A localized particle filter for high-dimensional nonlinear, A non-parametric ensemble transform method for Bayesian inference)</li>
 <li>explore the proposal density freedom ( Implicit equal-weights particle filter)</li>
 <li>combine particle filter with ensemble kalman filter</li>
 </ol>
 <p>A problem with localized particle filter is that use localization is that the localization radius has to be taken very small to avod this weight collapse.</p>
 <p>Furthermore, issues with localization as mentioned above for ensemble Kalman filters play a role here too.</p>
-<h2 id="estimating-the-model-error-covariance"><a class="markdownIt-Anchor" href="#estimating-the-model-error-covariance"></a> Estimating the model error covariance</h2>
+<h2 id="estimating-the-model-error-covariance">Estimating the model error covariance</h2>
 <p>The model equations are denoted as</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>f</mi><mo>(</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo><mo>+</mo><msup><mi>β</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x^n = f(x^{n-1}) + \beta^n
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.864108em;"></span><span class="strut bottom" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mord"><span class="mord mathit" style="margin-right:0.05278em;">β</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
+<p><span class="math display">\[x^n = f(x^{n-1}) + \beta^n\]</span></p>
 <p>Then:</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>y</mi><mi>n</mi></msup><mo>−</mo><mi>H</mi><mo>(</mo><msub><mi>f</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msup><mi>y</mi><mi>n</mi></msup><mo>−</mo><mi>H</mi><mo>(</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">y^n - H(f_i )= y^n - H()
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">−</span><span class="mord mathit" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="math display">\[y^n - H(f_i )= y^n - H()\]</span></p>
 
           
         
@@ -710,6 +703,7 @@ Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequenti
         
           
             
+
           
         
       
@@ -828,9 +822,9 @@ Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequenti
       
         
           
-            <p>ref: <a href="https://arxiv.org/pdf/1711.09598.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1711.09598.pdf</a></p>
+            <p>ref: https://arxiv.org/pdf/1711.09598.pdf</p>
 <p>The DMKF combines diffusion maps with a linear Kalman filter and with diffusion maps to construct data-driven virtual state corrdinates.</p>
-<h1 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h1>
+<h1 id="introduction">Introduction</h1>
 <p>In this paper, the authors take a non-parametric approach and propose a new method to derive the system model in a data-driven manner.</p>
 
           
@@ -953,20 +947,21 @@ Todling R. 2015b. A lag-1 smoother approach to system-error estimation: Sequenti
           
             <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <p>test mathjs</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>β</mi></mrow><annotation encoding="application/x-tex">x^2  \beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mi>β</mi></mrow><annotation encoding="application/x-tex">x^2    \beta
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8641079999999999em;"></span><span class="strut bottom" style="height:1.0585479999999998em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></span></p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<p><span class="math inline">\(x^2 \beta\)</span></p>
+<p><span class="math display">\[
+x^2    \beta
+\]</span></p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<h3 id="run-server">Run server</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<h3 id="generate-static-files">Generate static files</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 

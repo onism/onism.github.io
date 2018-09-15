@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; ar">
+<meta name="description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; arX">
 <meta name="keywords" content="Multi-Target-Tracking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STKSVD">
 <meta property="og:url" content="http://yoursite.com/2018/09/15/STKSVD/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; ar">
+<meta property="og:description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; arX">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-15T07:01:43.000Z">
+<meta property="og:updated_time" content="2018-09-15T08:41:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STKSVD">
-<meta name="twitter:description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; ar">
+<meta name="twitter:description" content="Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking ref: Manh, Huynh, and Gita Alaghband. &amp;quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&amp;quot; arX">
 
 
 
@@ -300,10 +300,32 @@
       
 
       
-        <h1 id="spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"><a class="markdownIt-Anchor" href="#spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"></a> Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking</h1>
-<pre><code>ref: Manh, Huynh, and Gita Alaghband. &quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&quot; arXiv preprint arXiv:1807.02143 (2018).
-</code></pre>
-<p>This paper characterized the spatial and temporal information between target’s samples through a new STKSVD appearance learning algorithm to better discriminative  targets.</p>
+        <h1 id="spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking">Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking</h1>
+<pre><code>ref: Manh, Huynh, and Gita Alaghband. &quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&quot; arXiv preprint arXiv:1807.02143 (2018).</code></pre>
+<p>This paper characterized the spatial and temporal information between target’s samples through a new STKSVD appearance learning algorithm to better discriminative targets.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Despite great improvements achieved in tracking performance, there remains challenges arising from factors such as</p>
+<ol type="1">
+<li>Occlusion</li>
+<li>Motion prediction</li>
+<li>Discriminative appearance</li>
+<li>abrupt camera motions</li>
+<li>light changes</li>
+</ol>
+<p>Several appearance learning methods have been used in variety of tracking systems such as:</p>
+<ol type="1">
+<li>incremental linear discriminant analysis (ILDA)</li>
+<li>incremental/decremental support vector machine (ID-SV)</li>
+<li>label consistent KSVD (LCKSVD)</li>
+<li>reinforcement learning</li>
+</ol>
+<h2 id="system-design">System Design</h2>
+<h3 id="initialization">Initialization</h3>
+<p>the dicitionary is initialized using the first few frames to generate a number of targets. Once we have the inintial targets, we apply our STKSVD algorithm to learn appearances of these initial targets.</p>
+<h3 id="overview-of-multi-target-tracking-steps">Overview of Multi-target Tracking steps</h3>
+<p>In the feature extraction step, we scale all human detection bounding boxes to the same scale and calculate color hisograms on the upper and lower body part for each detection.</p>
+<p>We also extract size (before scaling) and location features of each detection in order to calculate the same similarity and location similarity.</p>
+<p>OMP (Orthogonal Matching Pursuit) algorithm computes the nonlinear approximation of a signal in a dictionary <span class="math inline">\(D\)</span>. Sparse representation bring up the salient features that help in discriminating among different targets.</p>
 
       
     </div>
@@ -465,7 +487,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"></a> Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"><span class="nav-number">1.</span> <span class="nav-text">Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-design"><span class="nav-number">1.2.</span> <span class="nav-text">System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#initialization"><span class="nav-number">1.2.1.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overview-of-multi-target-tracking-steps"><span class="nav-number">1.2.2.</span> <span class="nav-text">Overview of Multi-target Tracking steps</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
