@@ -229,6 +229,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/15/STKSVD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junjie Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/15/STKSVD/" itemprop="url">STKSVD</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T14:55:59+08:00">
+                2018-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"><a class="markdownIt-Anchor" href="#spatiotemporal-ksvd-dictionary-learning-for-online-multi-target-tracking"></a> Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking</h1>
+<pre><code>ref: Manh, Huynh, and Gita Alaghband. &quot;Spatiotemporal KSVD Dictionary Learning for Online Multi-target Tracking.&quot; arXiv preprint arXiv:1807.02143 (2018).
+</code></pre>
+<p>This paper characterized the spatial and temporal information between target’s samples through a new STKSVD appearance learning algorithm to better discriminative  targets.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/feedback-PF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,24 +423,23 @@
       
         
           
-            <p>Feedback Particle Filter with Data-Driven Gain-Function Approximation https://www.merl.com/publications/docs/TR2018-034.pdf</p>
-<h2 id="abstract">Abstract</h2>
+            <p>Feedback Particle Filter with Data-Driven Gain-Function Approximation<br>
+<a href="https://www.merl.com/publications/docs/TR2018-034.pdf" target="_blank" rel="noopener">https://www.merl.com/publications/docs/TR2018-034.pdf</a></p>
+<h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2>
 <p>This paper addresses the continuous-disctrete time nonlinear filtering problem for stochastic dynamical systems using feedback particle filter. The main difficulty in the FPF is to approximate the gain function that controls the particles.</p>
 <p>This paper proposed a novel Galerkin-based method inspired by high-dimensional data-analysis techniques.</p>
-<h2 id="introduction">Introduction</h2>
-<p><strong>One problem with traditional PFs is the inevitable particle degeneracy</strong>. The resampling step makes PFs practically usefull, but introduces other negative effects, such as sample improverishment and increased variance.</p>
-<h2 id="background-feedback-particle-filter">Background: Feedback particle filter</h2>
-<p>In conventional PFs, the measurement update is implemented as a point-wise multiplication between likelihood and prior, where the prior is represented by a set of <span class="math inline">\(N\)</span> weighted particles, where the weights are computed using the likelihood conditioned on the respective particle. The FPF approximates the posterior with <span class="math inline">\(N\)</span> unweighted samples, or particles.</p>
-<p>At time <span class="math inline">\(t_k\)</span>, a new observation <span class="math inline">\(y_k\)</span> arrives. To incorporate <span class="math inline">\(y_k\)</span>, a particle flow <span class="math inline">\(\{S_k^i(\lambda) \}_{i=1}^N\)</span> defined by differential equations is introduced</p>
-<p><span class="math display">\[
-\frac{dS_k^i(\lambda)}{d\lambda} = K(S_k^i(\lambda), \lambda) I_k^i + \frac{1}{2} \Omega(S_k^i(\lambda), \lambda)
-\]</span></p>
+<h2 id="introduction"><a class="markdownIt-Anchor" href="#introduction"></a> Introduction</h2>
+<p><strong>One problem with traditional PFs is the inevitable particle degeneracy</strong>.  The resampling step makes PFs practically usefull, but introduces other negative effects, such as sample improverishment and increased variance.</p>
+<h2 id="background-feedback-particle-filter"><a class="markdownIt-Anchor" href="#background-feedback-particle-filter"></a> Background: Feedback particle filter</h2>
+<p>In conventional PFs, the measurement update is implemented as a point-wise multiplication between likelihood and prior, where the prior is represented by a set of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> weighted particles, where the weights are computed using the likelihood conditioned on the respective particle. The FPF approximates the posterior with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> unweighted samples, or particles.</p>
+<p>At time <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">t_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">t</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, a new observation <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">y_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> arrives. To incorporate <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">y_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, a particle flow <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msubsup><mi>S</mi><mi>k</mi><mi>i</mi></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><msubsup><mo>}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup></mrow><annotation encoding="application/x-tex">\{S_k^i(\lambda) \}_{i=1}^N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8413309999999999em;"></span><span class="strut bottom" style="height:1.1244389999999997em;vertical-align:-0.2831079999999999em;"></span><span class="base textstyle uncramped"><span class="mopen">{</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="vlist"><span style="top:0.2831079999999999em;margin-left:-0.05764em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mclose">)</span><span class="mclose"><span class="mclose">}</span><span class="vlist"><span style="top:0.258664em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> defined by differential equations is introduced</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><msubsup><mi>S</mi><mi>k</mi><mi>i</mi></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>λ</mi></mrow></mfrac><mo>=</mo><mi>K</mi><mo>(</mo><msubsup><mi>S</mi><mi>k</mi><mi>i</mi></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mo separator="true">,</mo><mi>λ</mi><mo>)</mo><msubsup><mi>I</mi><mi>k</mi><mi>i</mi></msubsup><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">Ω</mi><mo>(</mo><msubsup><mi>S</mi><mi>k</mi><mi>i</mi></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mo separator="true">,</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\frac{dS_k^i(\lambda)}{d\lambda} = K(S_k^i(\lambda), \lambda) I_k^i + \frac{1}{2} \Omega(S_k^i(\lambda), \lambda)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.5016639999999999em;"></span><span class="strut bottom" style="height:2.187664em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit">d</span><span class="mord mathit">λ</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit">d</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="vlist"><span style="top:0.2831079999999999em;margin-left:-0.05764em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mclose">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.07153em;">K</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="vlist"><span style="top:0.247em;margin-left:-0.05764em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mord mathit">λ</span><span class="mclose">)</span><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="vlist"><span style="top:0.247em;margin-left:-0.07847em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mord mathrm">Ω</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="vlist"><span style="top:0.247em;margin-left:-0.05764em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mord mathit">λ</span><span class="mclose">)</span></span></span></span></span></p>
 <p>In particular, for linear and Gaussian systems, the gian function becomes the Kalman gain and the Wong-Zakai term vanished.</p>
-<p>The main difficulty in the FPF is to find <span class="math inline">\(K\)</span>, and only in limited cases can an exact solution be computed.</p>
-<h3 id="constant-gain-approximation">Constant-Gain Approximation</h3>
-<p><span class="math display">\[
+<p>The main difficulty in the FPF is to find <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em;">K</span></span></span></span>, and only in limited cases can an exact solution be computed.</p>
+<h3 id="constant-gain-approximation"><a class="markdownIt-Anchor" href="#constant-gain-approximation"></a> Constant-Gain Approximation</h3>
 K \approx [c_1   \dots c_m] R^{-1}
-\]</span></p>
+
 
           
         
@@ -437,29 +559,34 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <p>I am working with Jeremie Houssineau at NUS # Bayesian data assimilation based on a family of outer measures (2016) In this article, they study a representation of uncertainty that is completely within the standard framework of probabilistic measure theory. ## Uncertainty and Probability measures</p>
-<p><strong>Example:</strong> Consider a discrete-time joint process <span class="math inline">\(X_n,Y_n\)</span> assumed to be a hidden Markov model and consider the case where realisations of <span class="math inline">\(Y_n\)</span> of the observation process are not received directly but are instead known to be in some subset <span class="math inline">\(A_n\)</span> of the observation space.</p>
+            <p>I am working with Jeremie Houssineau at NUS</p>
+<h1 id="bayesian-data-assimilation-based-on-a-family-of-outer-measures-2016"><a class="markdownIt-Anchor" href="#bayesian-data-assimilation-based-on-a-family-of-outer-measures-2016"></a> Bayesian data assimilation based on a family of outer measures (2016)</h1>
+<p>In this article, they study a representation of uncertainty that is completely within the standard framework of probabilistic measure theory.</p>
+<h2 id="uncertainty-and-probability-measures"><a class="markdownIt-Anchor" href="#uncertainty-and-probability-measures"></a> Uncertainty and Probability measures</h2>
+<p><strong>Example:</strong> Consider a discrete-time joint process <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>Y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_n,Y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.07847em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> assumed to be a hidden Markov model and consider the case where realisations of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">Y_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.22222em;">Y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.22222em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> of the observation process are not received directly but are instead known to be in some subset <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">A_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">A</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> of the observation space.</p>
 <p>There is a need for the introduction of additional concepts that could account for these non-informatives types of knowledge, and which would in turn enable data assimilation to be performed in more general spaces.</p>
-<h2 id="fundamental-concepts">Fundamental Concepts</h2>
-<h3 id="outer-measure">Outer measure</h3>
-<p>An outer measure on <span class="math inline">\(\textbf{E}\)</span> is a function verifying the following conditions:</p>
-<ol type="1">
+<h2 id="fundamental-concepts"><a class="markdownIt-Anchor" href="#fundamental-concepts"></a> Fundamental Concepts</h2>
+<h3 id="outer-measure"><a class="markdownIt-Anchor" href="#outer-measure"></a> Outer measure</h3>
+<p>An outer measure on \textbf{E} is a function verifying the following conditions:</p>
+<ol>
 <li>Null empty set</li>
 <li>Monotonicity</li>
 <li>Countable sub-additivity</li>
 </ol>
-<h2 id="measure-constraint">Measure constraint</h2>
-<h1 id="smoothing-and-filtering-with-a-class-of-outer-measures">Smoothing and filtering with a class of outer measures</h1>
-<h2 id="representation-of-uncertainty">Representation of uncertainty</h2>
-<p>Defining outer measures on measureable functions is then preferred since it is more general. It is better to understand random variables as solely describing randomness with another concept needed to describe uncertainty in general. The concept of uncertain variable is introduced in order to describe a variable about which <span class="math inline">\(P\)</span> gives information.</p>
-<h2 id="hmm-and-outer-measures">HMM and outer measures</h2>
-<p>Jeremie propose the following approach: the uncertainty about a collection <span class="math inline">\(\{X_t \}\)</span> of uncertain variables has the Markov property if for any <span class="math inline">\(t\)</span> it holds that</p>
-<p><span class="math display">\[\bar{P}(\varphi)(x_{0:t-1}) = \bar{P}(x_{t-1})\]</span></p>
-<p>In some case, the uncertain variables will represent an unknown but non-random change in the model, e.g. a plane manoeuvring or a pedestrian changing direction.</p>
-<h1 id="detection-and-estimation-of-partially-observed-dynamical-systems-an-outer-measure-approach">Detection and estimation of partially-observed dynamical systems: an outer-measure approach</h1>
-<p>We consider a set <span class="math inline">\(\Omega_u\)</span> containing the possible states for the deterministic phenomena of interest. A mapping <span class="math inline">\(X\)</span> from the set <span class="math inline">\(\Omega_u\)</span> of outcomes to a set <span class="math inline">\(E\)</span> is referred to as an E-valued deterministic uncertain variable.</p>
-<p>Let <span class="math inline">\(\bar{P}\)</span> be an o.p.m describing an uncertain variable <span class="math inline">\(X\)</span> on <span class="math inline">\(E\)</span> abd ket <span class="math inline">\(\bar{P}^{&#39;}(\cdot|X = x)\)</span> be a conditional o.p.m. describing another uncertain variable <span class="math inline">\(X^{&#39;}\)</span> on <span class="math inline">\(F\)</span> conditioned on <span class="math inline">\(X = x\)</span> for any <span class="math inline">\(x \in E\)</span>, then the marginal o.p.m. is characterised by</p>
-<p><span class="math display">\[\bar{P}^{&#39;} (\varphi) = \int ||f^{&#39;}(x^{&#39;}|\cdot) \cdot f||_{\infty} P(df) P^{&#39;}(df^{&#39;}|X)\]</span></p>
+<h2 id="measure-constraint"><a class="markdownIt-Anchor" href="#measure-constraint"></a> Measure constraint</h2>
+<h1 id="smoothing-and-filtering-with-a-class-of-outer-measures"><a class="markdownIt-Anchor" href="#smoothing-and-filtering-with-a-class-of-outer-measures"></a> Smoothing and filtering with a class of outer measures</h1>
+<h2 id="representation-of-uncertainty"><a class="markdownIt-Anchor" href="#representation-of-uncertainty"></a> Representation of uncertainty</h2>
+<p>Defining outer measures on measureable functions is then preferred since it is more general. It is better to understand random variables as solely describing randomness with another concept needed to describe uncertainty in general. The concept of uncertain variable is introduced in order to describe a variable about which <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span></span> gives information.</p>
+<h2 id="hmm-and-outer-measures"><a class="markdownIt-Anchor" href="#hmm-and-outer-measures"></a> HMM and outer measures</h2>
+<p>Jeremie propose the following approach: the uncertainty about a collection <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>X</mi><mi>t</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{X_t \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">{</span><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.07847em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">}</span></span></span></span> of uncertain variables has the Markov property if for any <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.61508em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span></span></span></span> it holds that</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>P</mi></mrow><mo>¯</mo></mover><mo>(</mo><mi>φ</mi><mo>)</mo><mo>(</mo><msub><mi>x</mi><mrow><mn>0</mn><mo>:</mo><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo><mo>=</mo><mover accent="true"><mrow><mi>P</mi></mrow><mo>¯</mo></mover><mo>(</mo><msub><mi>x</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar{P}(\varphi)(x_{0:t-1}) = \bar{P}(x_{t-1})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8201099999999999em;"></span><span class="strut bottom" style="height:1.07011em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.25233em;margin-left:0.16668em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="accent-body"><span>¯</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">φ</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">0</span><span class="mrel">:</span><span class="mord mathit">t</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.25233em;margin-left:0.16668em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="accent-body"><span>¯</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">t</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>In some case, the uncertain variables will represent an unknown but non-random change in the model, e.g. a plane manoeuvring or a pedestrian changing direction.</p>
+<h1 id="detection-and-estimation-of-partially-observed-dynamical-systems-an-outer-measure-approach"><a class="markdownIt-Anchor" href="#detection-and-estimation-of-partially-observed-dynamical-systems-an-outer-measure-approach"></a> Detection and estimation of partially-observed dynamical systems: an outer-measure approach</h1>
+<p>We consider a set <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">\Omega_u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathrm">Ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">u</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> containing the possible states for the deterministic phenomena of interest.  A mapping <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">X</span></span></span></span> from the set <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">\Omega_u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathrm">Ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">u</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> of outcomes to a set <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span> is referred to as an E-valued deterministic uncertain variable.</p>
+<p>Let <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>P</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{P}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8201099999999999em;"></span><span class="strut bottom" style="height:0.8201099999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.25233em;margin-left:0.16668em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="accent-body"><span>¯</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> be an o.p.m describing an uncertain variable <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">X</span></span></span></span> on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span> abd ket <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>P</mi></mrow><mo>¯</mo></mover><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mo>(</mo><mo>⋅</mo><mi mathvariant="normal">∣</mi><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar{P}^{&#x27;}(\cdot|X = x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.89488em;"></span><span class="strut bottom" style="height:1.1448800000000001em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.25233em;margin-left:0.16668em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="accent-body"><span>¯</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord">⋅</span><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="mrel">=</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span> be a conditional o.p.m. describing another uncertain variable <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>X</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup></mrow><annotation encoding="application/x-tex">X^{&#x27;}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.89488em;"></span><span class="strut bottom" style="height:0.89488em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">F</span></span></span></span> conditioned on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">X = x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="mrel">=</span><span class="mord mathit">x</span></span></span></span> for any <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x \in E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span><span class="mrel">∈</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span></span>, then the marginal o.p.m. is characterised by</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>P</mi></mrow><mo>¯</mo></mover><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mo>(</mo><mi>φ</mi><mo>)</mo><mo>=</mo><mo>∫</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><msup><mi>f</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mo>(</mo><msup><mi>x</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mi mathvariant="normal">∣</mi><mo>⋅</mo><mo>)</mo><mo>⋅</mo><mi>f</mi><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="normal">∞</mi></mrow></msub><mi>P</mi><mo>(</mo><mi>d</mi><mi>f</mi><mo>)</mo><msup><mi>P</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mo>(</mo><mi>d</mi><msup><mi>f</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msup><mi mathvariant="normal">∣</mi><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar{P}^{&#x27;} (\varphi) = \int ||f^{&#x27;}(x^{&#x27;}|\cdot) \cdot f||_{\infty} P(df) P^{&#x27;}(df^{&#x27;}|X)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.22225em;vertical-align:-0.86225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">P</span></span></span><span style="top:-0.25233em;margin-left:0.16668em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="accent-body"><span>¯</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">φ</span><span class="mclose">)</span><span class="mrel">=</span><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="mord mathrm">∣</span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathrm">∣</span><span class="mbin">⋅</span><span class="mclose">)</span><span class="mbin">⋅</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathrm">∣</span><span class="mord"><span class="mord mathrm">∣</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">∞</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">d</span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathrm">∣</span><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span></span></p>
 
           
         
@@ -579,9 +706,16 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="a-hierarchical-bayes-ensemble-kalman-filter">A Hierarchical Bayes Ensemble Kalman Filter</h1>
-<p>In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix <span class="math inline">\(B\)</span>, which is estimated from the forecast ensemble.</p>
-<p>We hypothesize that 1. The ensemble size is too small for sample covariance matrices to be accurate estimators 2. The direct computation of the predictability covariance matrix <span class="math inline">\(P_k\)</span> as <span class="math inline">\(F_kA_{k-1}F_k^T\)</span> is unfeasible. 3. The model error covariance matrix <span class="math inline">\(Q_k\)</span> is temporally variable and explicitly unknown 4. Conditionally on <span class="math inline">\(Q_k\)</span>, the model errors are zero-mean Gaussian 5. We can draw independent pseudo-random samples from <span class="math inline">\(\mathcal{N}(0,Q_k)\)</span> with the true <span class="math inline">\(Q_k\)</span>.</p>
+            <h1 id="a-hierarchical-bayes-ensemble-kalman-filter"><a class="markdownIt-Anchor" href="#a-hierarchical-bayes-ensemble-kalman-filter"></a> A Hierarchical Bayes Ensemble Kalman Filter</h1>
+<p>In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span>, which is estimated from the forecast ensemble.</p>
+<p>We hypothesize that</p>
+<ol>
+<li>The ensemble size is too small for sample covariance matrices to be accurate estimators</li>
+<li>The direct computation of the predictability covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">P_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><msub><mi>A</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><msubsup><mi>F</mi><mi>k</mi><mi>T</mi></msubsup></mrow><annotation encoding="application/x-tex">F_kA_{k-1}F_k^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8413309999999999em;"></span><span class="strut bottom" style="height:1.1244389999999997em;vertical-align:-0.2831079999999999em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">A</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.2831079999999999em;margin-left:-0.13889em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is unfeasible.</li>
+<li>The model error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is temporally variable and explicitly unknown</li>
+<li>Conditionally on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, the model errors are zero-mean Gaussian</li>
+<li>We can draw independent pseudo-random samples from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">N</mi></mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><msub><mi>Q</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,Q_k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal" style="margin-right:0.14736em;">N</span></span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span> with the true <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</li>
+</ol>
 
           
         
@@ -701,7 +835,7 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="a-localized-particle-filter-for-high-dimensional-nonlinear-systems">A Localized Particle Filter for High-Dimensional Nonlinear Systems</h1>
+            <h1 id="a-localized-particle-filter-for-high-dimensional-nonlinear-systems"><a class="markdownIt-Anchor" href="#a-localized-particle-filter-for-high-dimensional-nonlinear-systems"></a> A Localized Particle Filter for High-Dimensional Nonlinear Systems</h1>
 <p>The local PF extends the particle weights into vector quantities to reduce the influence of distant observations on the weight calculations via a localization function.</p>
 <p><strong>The failure of the PF as an affordable filter for high-dimensional systems remains a fundamental obstacle for applying this method on problems in geophysics, such as data assimilation for operational weather prediction models.</strong></p>
 <p><strong>The success of EnKFs in high-dimensional systems is due in part to the use of covariance localization.</strong></p>
@@ -824,8 +958,8 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="artificial-neural-network-training-utilizing-the-smooth-variable-structure-filter-estimation-strategy">Artificial neural network training utilizing the smooth variable structure filter estimation strategy</h1>
-<h1 id="a-sequential-learning-algorithm-based-on-adaptive-particle-filtering-for-rbf-network">A sequential learning algorithm based on adaptive particle filtering for RBF network</h1>
+            <h1 id="artificial-neural-network-training-utilizing-the-smooth-variable-structure-filter-estimation-strategy"><a class="markdownIt-Anchor" href="#artificial-neural-network-training-utilizing-the-smooth-variable-structure-filter-estimation-strategy"></a> Artificial neural network training utilizing the smooth variable structure filter estimation strategy</h1>
+<h1 id="a-sequential-learning-algorithm-based-on-adaptive-particle-filtering-for-rbf-network"><a class="markdownIt-Anchor" href="#a-sequential-learning-algorithm-based-on-adaptive-particle-filtering-for-rbf-network"></a> A sequential learning algorithm based on adaptive particle filtering for RBF network</h1>
 <p>Neural Comput &amp; Applic</p>
 
           
@@ -946,10 +1080,15 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="improving-the-particle-filter-for-high-dimensional-problems-using-artificial-process-noise">Improving the particle filter for high-dimensional problems using artificial process noise</h1>
+            <h1 id="improving-the-particle-filter-for-high-dimensional-problems-using-artificial-process-noise"><a class="markdownIt-Anchor" href="#improving-the-particle-filter-for-high-dimensional-problems-using-artificial-process-noise"></a> Improving the particle filter for high-dimensional problems using artificial process noise</h1>
 <p>In this paper, the authors approximate the model by adding artificial process noise in an additional state update, then they design a proposal that combines the standard and the locally optimal proposal.</p>
 <p>The approximate model is given by</p>
-<p><span class="math display">\[x^{&#39;}_t = f(x_{t-1},v_t)\]</span> <span class="math display">\[x_t =x^{&#39;}_t + \varepsilon \xi \]</span> <span class="math display">\[y_t = Cx_t + e_t\]</span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>x</mi><mi>t</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msubsup><mo>=</mo><mi>f</mi><mo>(</mo><msub><mi>x</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>t</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">x^{&#x27;}_t = f(x_{t-1},v_t)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9448799999999999em;"></span><span class="strut bottom" style="height:1.19488em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.247em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">t</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub><mo>=</mo><msubsup><mi>x</mi><mi>t</mi><mrow><msup><mrow></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msubsup><mo>+</mo><mi>ε</mi><mi>ξ</mi></mrow><annotation encoding="application/x-tex">x_t =x^{&#x27;}_t + \varepsilon \xi 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.9448799999999999em;"></span><span class="strut bottom" style="height:1.1918799999999998em;vertical-align:-0.247em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.247em;margin-left:0em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span style="top:-0.4129999999999999em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord"><span></span><span class="vlist"><span style="top:-0.363em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped"><span class="mord scriptscriptstyle uncramped"><span class="mord mathrm">′</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord mathit">ε</span><span class="mord mathit" style="margin-right:0.04601em;">ξ</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><mi>C</mi><msub><mi>x</mi><mi>t</mi></msub><mo>+</mo><msub><mi>e</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">y_t = Cx_t + e_t
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">e</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
 
           
         
@@ -1069,11 +1208,11 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="a-stable-particle-filter-in-high-dimensions">A Stable Particle Filter in High-Dimensions</h1>
-<p>In high dimensionas, standard particle filters can have a cost that is exponential in <span class="math inline">\(d\)</span> for the algorithm to be stable in an appropriate sense. This paper proposed a new particle filter, called space-time particle filter, for a specific family of state space models in discrete time.</p>
-<p>The authors break the <span class="math inline">\(k\)</span>-th time step of the particle filter into <span class="math inline">\(\tau_{k,d}\)</span> space-steps and run a system of <span class="math inline">\(N\)</span> independent particle filters for these steps.</p>
-<h2 id="the-space-time-particle-filter">The Space-Time Particle Filter</h2>
-<p>The authors develop an algorithm that combines a local filter running <span class="math inline">\(d\)</span> space-step using <span class="math inline">\(M_d\)</span> particles, with a global filter making time-steps and uses <span class="math inline">\(N\)</span> particles.</p>
+            <h1 id="a-stable-particle-filter-in-high-dimensions"><a class="markdownIt-Anchor" href="#a-stable-particle-filter-in-high-dimensions"></a> A Stable Particle Filter in High-Dimensions</h1>
+<p>In high dimensionas, standard particle filters can have a cost that is exponential in <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span></span></span></span> for the algorithm to be stable in an appropriate sense. This paper proposed a new particle filter, called space-time particle filter, for a specific family of state space models in discrete time.</p>
+<p>The authors break the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span>-th time step of the particle filter into <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>τ</mi><mrow><mi>k</mi><mo separator="true">,</mo><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\tau_{k,d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.1132em;">τ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.1132em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mord mathit">d</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> space-steps and run a system of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> independent particle filters for these steps.</p>
+<h2 id="the-space-time-particle-filter"><a class="markdownIt-Anchor" href="#the-space-time-particle-filter"></a> The Space-Time Particle Filter</h2>
+<p>The authors develop an algorithm that combines a local filter running <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">d</span></span></span></span> space-step using <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">M_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10903em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">d</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> particles, with a global filter making time-steps and uses <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span> particles.</p>
 
           
         
@@ -1193,10 +1332,11 @@ K \approx [c_1   \dots c_m] R^{-1}
       
         
           
-            <h1 id="data-association---solution-or-avoidance-evaluation-of-a-filter-based-on-rfs-framework-and-factor-graphs-with-sme">Data Association - Solution or Avoidance : Evaluation of a Filter based on RFS framework and Factor Graphs with SME</h1>
-<p>Most of the CL methodologies use some of the popular state-of-the-art soultion to manage the data origin uncertainty. These techniques mostly fall in the following categories: NN, PDA, JIPDA, MHT, multi-target particle filtering and RFSs.</p>
+            <h1 id="data-association-solution-or-avoidance-evaluation-of-a-filter-based-on-rfs-framework-and-factor-graphs-with-sme"><a class="markdownIt-Anchor" href="#data-association-solution-or-avoidance-evaluation-of-a-filter-based-on-rfs-framework-and-factor-graphs-with-sme"></a> Data Association - Solution or Avoidance : Evaluation of a Filter based on RFS framework and Factor Graphs with SME</h1>
+<p>Most of the CL methodologies use some of the popular state-of-the-art soultion to manage the data origin uncertainty.  These techniques mostly fall in the following categories: NN, PDA, JIPDA, MHT, multi-target particle filtering and RFSs.</p>
 <pre><code>Graph-Based Cooperative Localization Using
-Symmetric Measurement Equations</code></pre>
+Symmetric Measurement Equations
+</code></pre>
 
           
         
@@ -1316,132 +1456,8 @@ Symmetric Measurement Equations</code></pre>
       
         
           
-            <h1 id="distributed-kalman-filtering-with-reduced-transmission-rate">Distributed Kalman Filtering With Reduced Transmission Rate</h1>
+            <h1 id="distributed-kalman-filtering-with-reduced-transmission-rate"><a class="markdownIt-Anchor" href="#distributed-kalman-filtering-with-reduced-transmission-rate"></a> Distributed Kalman Filtering With Reduced Transmission Rate</h1>
 <p>In this paper, two distributed Kalman filtering algorithms are proposed. The first algorithm merely requires communication of each local sensor node with the fusion center in every other time step. The second algorithm even allows for a lower communicate rate. Both algorithms apply event-based communication to compute consistent estimates and to reduce the estimation error for a fixed communication rate.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/15/FADAForHighDimensional/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Junjie Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/15/FADAForHighDimensional/" itemprop="url">FADAForHighDimensional</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T11:05:47+08:00">
-                2018-01-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="fast-approximate-data-assimilation-for-high-dimensional-problems">Fast Approximate Data Assimilation for High-Dimensional Problems</h1>
-<p>In this paper, a novel data assimilation approach which only requires a small number of samples and can be applied to high-dimensional systems. This approach is based on linear latent variable models and leverages machinery to achieve fast implementation. It does not require computing the high-dimensional sample covariance matrix, which provides significant computational speed-up. Since it is performed without calculating likelihood function, it can be applied to data sssimilation problems in which likelihood is intractable.</p>
-<p><strong>In fact, in many cases, the distribution of observation noise is unknown, and the observation model is viewed as a black box which outputs observation data given the input states.</strong></p>
-<h2 id="methodology">Methodology</h2>
-<h3 id="linear-latent-variable-model-llvm">Linear Latent Variable Model (LLVM)</h3>
 
           
         
@@ -1527,7 +1543,7 @@ Symmetric Measurement Equations</code></pre>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1540,7 +1556,7 @@ Symmetric Measurement Equations</code></pre>
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

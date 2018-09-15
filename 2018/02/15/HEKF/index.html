@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix \(B\), which is estimated from the forecast ensem">
+<meta name="description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 <meta name="keywords" content="KalmanFilter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEKF">
 <meta property="og:url" content="http://yoursite.com/2018/02/15/HEKF/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix \(B\), which is estimated from the forecast ensem">
+<meta property="og:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-02-15T02:19:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEKF">
-<meta name="twitter:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix \(B\), which is estimated from the forecast ensem">
+<meta name="twitter:description" content="A Hierarchical Bayes Ensemble Kalman Filter In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix BBB, which is estimated from the forecast ensemb">
 
 
 
@@ -300,9 +300,16 @@
       
 
       
-        <h1 id="a-hierarchical-bayes-ensemble-kalman-filter">A Hierarchical Bayes Ensemble Kalman Filter</h1>
-<p>In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix <span class="math inline">\(B\)</span>, which is estimated from the forecast ensemble.</p>
-<p>We hypothesize that 1. The ensemble size is too small for sample covariance matrices to be accurate estimators 2. The direct computation of the predictability covariance matrix <span class="math inline">\(P_k\)</span> as <span class="math inline">\(F_kA_{k-1}F_k^T\)</span> is unfeasible. 3. The model error covariance matrix <span class="math inline">\(Q_k\)</span> is temporally variable and explicitly unknown 4. Conditionally on <span class="math inline">\(Q_k\)</span>, the model errors are zero-mean Gaussian 5. We can draw independent pseudo-random samples from <span class="math inline">\(\mathcal{N}(0,Q_k)\)</span> with the true <span class="math inline">\(Q_k\)</span>.</p>
+        <h1 id="a-hierarchical-bayes-ensemble-kalman-filter"><a class="markdownIt-Anchor" href="#a-hierarchical-bayes-ensemble-kalman-filter"></a> A Hierarchical Bayes Ensemble Kalman Filter</h1>
+<p>In the traditional EnKF, the forecast uncertainty is characterized by the forecast error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05017em;">B</span></span></span></span>, which is estimated from the forecast ensemble.</p>
+<p>We hypothesize that</p>
+<ol>
+<li>The ensemble size is too small for sample covariance matrices to be accurate estimators</li>
+<li>The direct computation of the predictability covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">P_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>k</mi></msub><msub><mi>A</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><msubsup><mi>F</mi><mi>k</mi><mi>T</mi></msubsup></mrow><annotation encoding="application/x-tex">F_kA_{k-1}F_k^T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8413309999999999em;"></span><span class="strut bottom" style="height:1.1244389999999997em;vertical-align:-0.2831079999999999em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit">A</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="vlist"><span style="top:0.2831079999999999em;margin-left:-0.13889em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is unfeasible.</li>
+<li>The model error covariance matrix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> is temporally variable and explicitly unknown</li>
+<li>Conditionally on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, the model errors are zero-mean Gaussian</li>
+<li>We can draw independent pseudo-random samples from <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">N</mi></mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><msub><mi>Q</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{N}(0,Q_k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathcal" style="margin-right:0.14736em;">N</span></span><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span> with the true <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Q_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">Q</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</li>
+</ol>
 
       
     </div>
@@ -420,7 +427,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -433,7 +440,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -468,7 +475,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-hierarchical-bayes-ensemble-kalman-filter"><span class="nav-number">1.</span> <span class="nav-text">A Hierarchical Bayes Ensemble Kalman Filter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a-hierarchical-bayes-ensemble-kalman-filter"><span class="nav-number">1.</span> <span class="nav-text"><a class="markdownIt-Anchor" href="#a-hierarchical-bayes-ensemble-kalman-filter"></a> A Hierarchical Bayes Ensemble Kalman Filter</span></a></li></ol></div>
             
 
           </div>

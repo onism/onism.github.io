@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
+<meta name="description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
 <meta name="keywords" content="Bayes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="introduce PyMC">
 <meta property="og:url" content="http://yoursite.com/2017/12/17/introduce-PyMC/index.html">
 <meta property="og:site_name" content="My Blogs">
-<meta property="og:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
+<meta property="og:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-12-17T12:28:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="introduce PyMC">
-<meta name="twitter:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&amp;#39;poisson_param&amp;#39;,1) data_generator = pm.Poisson(&amp;#39;data_generator&amp;#39;, lambda">
+<meta name="twitter:description" content="父变量 是会对其他变量有影响的变量 子变量 是会被其他变量影响的变量，即父变量的作用变量 之间关系是多对多点关系。 以下面代码为例子： import pymc as pm  lambda_ = pm.Exponential(&apos;poisson_param&apos;,1) data_generator = pm.Poisson(&apos;data_generator&apos;, lambda_) data_plus_one">
 
 
 
@@ -300,27 +300,30 @@
       
 
       
-        <p><strong>父变量</strong> 是会对其他变量有影响的变量 <strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
+        <p><strong>父变量</strong> 是会对其他变量有影响的变量<br>
+<strong>子变量</strong> 是会被其他变量影响的变量，即父变量的作用变量</p>
 <p>之间关系是多对多点关系。</p>
 <p>以下面代码为例子：</p>
 <pre><code>import pymc as pm
 
-lambda_ = pm.Exponential(&#39;poisson_param&#39;,1)
-data_generator = pm.Poisson(&#39;data_generator&#39;, lambda_)
+lambda_ = pm.Exponential('poisson_param',1)
+data_generator = pm.Poisson('data_generator', lambda_)
 data_plus_one = data_generator + 1
-print &#39;Children of lambda_&#39;
+print 'Children of lambda_'
 print lambda_.children
-print &#39;Parents of data_generator&#39;
+print 'Parents of data_generator'
 print data_generator.parents
-print &#39;Children of data_generator&#39;
-print data_generator.children</code></pre>
+print 'Children of data_generator'
+print data_generator.children
+</code></pre>
 <p>程序输出如下：</p>
 <pre><code>Children of lambda_
-set([&lt;pymc.distributions.Poisson &#39;data_generator&#39; at 0x110677a50&gt;])
+set([&lt;pymc.distributions.Poisson 'data_generator' at 0x110677a50&gt;])
 Parents of data_generator
-{&#39;mu&#39;: &lt;pymc.distributions.Exponential &#39;poisson_param&#39; at 0x110677990&gt;}
+{'mu': &lt;pymc.distributions.Exponential 'poisson_param' at 0x110677990&gt;}
 Children of data_generator
-set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11068d450&gt;]</code></pre>
+set([&lt;pymc.PyMCObjects.Deterministic '(data_generator_add_1)' at 0x11068d450&gt;]
+</code></pre>
 
       
     </div>
@@ -429,7 +432,7 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -442,7 +445,7 @@ set([&lt;pymc.PyMCObjects.Deterministic &#39;(data_generator_add_1)&#39; at 0x11
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
